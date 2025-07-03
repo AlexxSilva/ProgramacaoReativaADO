@@ -42,7 +42,7 @@ namespace ProgramacaoReativaADO
             var pedidos = new List<Pedido>();
             string connectionString = "data Source=localhost;Initial Catalog=AppTestes;User ID=sa;Password=sa; Timeout=10;";
             string query = @"
-            SELECT Id, Produto, Quantidade, DataCriacao 
+            SELECT Id, Produto, Quantidade, DataCriacao, Lote
             FROM Pedidos 
             WHERE status = 'NP'";
             DateTime ultimaVerificacao = DateTime.Now.AddSeconds(-15);
@@ -66,7 +66,8 @@ namespace ProgramacaoReativaADO
                                 Id = Convert.ToInt32(reader["Id"]),
                                 Produto = reader["Produto"].ToString(),
                                 Quantidade = Convert.ToDouble(reader["Quantidade"]),
-                                DataCriacao = Convert.ToDateTime(reader["DataCriacao"])
+                                DataCriacao = Convert.ToDateTime(reader["DataCriacao"]),
+                                Lote = reader["Lote"].ToString(),
                             };
 
                             pedidos.Add(pedido);
@@ -76,24 +77,7 @@ namespace ProgramacaoReativaADO
                         reader.Close();
                     }
 
-                    //if (pedidosIds.Any())
-                    //{
-                    //    string ids = string.Join(",", pedidosIds);
 
-                    //    string updateQuery = @"
-                    //            UPDATE Pedidos 
-                    //            SET Status = @Status
-                    //            WHERE Id IN (" + ids + ")";
-
-                    //    using (var updateCommand = new SqlCommand(updateQuery, connection))
-                    //    {
-                    //        updateCommand.Parameters.AddWithValue("@Status", "P");
-                    //        updateCommand.ExecuteNonQuery(); // Executa o UPDATE em lote
-                    //    }
-                    //}
-                    
-                    //melhor performance usando parametros e evita sqlInjection
-                    //
                     if (pedidosIds.Any())
                     {
                         // Cria a lista de parâmetros

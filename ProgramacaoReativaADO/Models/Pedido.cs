@@ -12,5 +12,6 @@ namespace ProgramacaoReativaADO.Models
         public string Produto { get; set; }
         public double Quantidade { get; set; }
         public DateTime DataCriacao { get; set; }
+        public string Lote { get; set; }
     }
 }
