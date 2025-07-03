@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgramacaoReativaADO.Models
+namespace ProgramacaoReativaADO.Domain.Models
 {
-    class Pedido
+    public class Pedido
     {
         public int Id { get; set; }
         public string Produto { get; set; }

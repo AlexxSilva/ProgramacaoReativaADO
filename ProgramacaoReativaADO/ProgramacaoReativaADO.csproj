@@ -55,7 +55,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Application\PedidoMonitor.cs" />
+    <Compile Include="Application\PedidoService.cs" />
+    <Compile Include="Domain\Interfaces\IPedidoRepository.cs" />
+    <Compile Include="Domain\Interfaces\IPedidoService.cs" />
+    <Compile Include="Domain\Models\Pedido.cs" />
+    <Compile Include="Infraestruture\PedidoRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,5 +68,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
