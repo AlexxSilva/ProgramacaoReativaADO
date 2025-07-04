@@ -2,7 +2,6 @@
 
 [![.NET](https://img.shields.io/badge/.NET-8.0-blue?logo=dotnet)](https://dotnet.microsoft.com/)
 [![Rx.NET](https://img.shields.io/badge/Rx.NET-Reactive-blueviolet?logo=reactivex)](https://github.com/dotnet/reactive)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > Projeto de monitoramento reativo de pedidos utilizando **Rx.NET** no ecossistema **.NET**, com foco em **Clean Code**, **DDD** e boas práticas arquiteturais.
 
@@ -42,20 +41,20 @@ A estrutura segue os princípios de **Clean Code**, **Domain-Driven Design (DDD)
 
 PedidoMonitorApp/
 ├── Domain/
-│ ├── Pedido.cs
-│ └── IPedidoRepository.cs
-│ └── IPedidoService.cs
+│   ├── Pedido.cs
+│   ├── IPedidoRepository.cs
+│   └── IPedidoService.cs
 │
 ├── Application/
-│ ├── PedidoService.cs
-│ └── PedidoMonitor.cs
+│   ├── PedidoService.cs
+│   └── PedidoMonitor.cs
 │
 ├── Infrastructure/
-│ └── PedidoRepository.cs
+│   └── PedidoRepository.cs
 │
 ├── UI/
-│ ├── IPedidoExibidor.cs
-│ └── PedidoExibidorConsole.cs
+│   ├── IPedidoExibidor.cs
+│   └── PedidoExibidorConsole.cs
 │
 └── Program.cs
 
